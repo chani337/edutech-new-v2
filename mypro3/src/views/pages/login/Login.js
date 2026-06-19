@@ -172,7 +172,7 @@ const Login = () => {
 
   const start = () => {
     gapi.client.init({
-      clientId: '***REMOVED***',
+      clientId: googleClientId || '***REMOVED***',
       scope: 'email',
     })
   }
@@ -240,7 +240,7 @@ const Login = () => {
                     >
                       <GoogleLogin
                         className="mb-2 loginBtn"
-                        clientId="***REMOVED***"
+                        clientId={googleClientId || "***REMOVED***"}
                         onSuccess={onSuccess}
                         onFailure={onFailure}
                         buttonText="구글로그인"
