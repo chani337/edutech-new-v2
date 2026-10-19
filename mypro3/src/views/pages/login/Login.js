@@ -25,7 +25,7 @@ import { toast } from 'react-custom-alert'
 import 'react-custom-alert/dist/index.css'
 
 const Login = () => {
-  const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID || '***REMOVED***'
+  const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID
 
   const nav = useNavigate()
   const [code, setCode] = useState()

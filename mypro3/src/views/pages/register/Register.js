@@ -230,7 +230,7 @@ const Register = () => {
   const onLogoutSuccess = () => {}
 
   //googleLogin
-  const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID || '***REMOVED***'
+  const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID
 
   const onGoogleSuccess = (credentialResponse) => {
     const decoded = jwtDecode(credentialResponse.credential)
