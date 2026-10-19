@@ -231,12 +231,24 @@ public class ProjectController {
 	@Value("${file.upload.local-path:./data}")
 	private String uploadPath;
 
+	@Value("${file.upload.remote-host}")
+	private String remoteHost;
+
+	@Value("${file.upload.remote-port}")
+	private int remotePort;
+
+	@Value("${file.upload.remote-username}")
+	private String remoteUsername;
+
+	@Value("${file.upload.remote-password}")
+	private String remotePassword;
+
 	// SFTP 원격 전송 (파일질라 연동 및 다중 하위 폴더 자동 생성)
 	public void sendFileRemote(MultipartFile file, String path, String name) throws Exception {
-		String username = "root";
-		String password = "***REMOVED***";
-		String host = "edusmhrd.ddns.net";
-		int port = 26;
+		String username = remoteUsername;
+		String password = remotePassword;
+		String host = remoteHost;
+		int port = remotePort;
 		
 		byte[] bytes = org.apache.commons.io.IOUtils.toByteArray(file.getInputStream());
 		

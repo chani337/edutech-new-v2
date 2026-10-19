@@ -62,6 +62,18 @@ public class TchController {
 	@Value("${file.upload.local-path:./data}")
 	private String localPath;
 
+	@Value("${file.upload.remote-host}")
+	private String remoteHost;
+
+	@Value("${file.upload.remote-port}")
+	private int remotePort;
+
+	@Value("${file.upload.remote-username}")
+	private String remoteUsername;
+
+	@Value("${file.upload.remote-password}")
+	private String remotePassword;
+
 	Gson gson = new Gson();
             
 	
@@ -84,10 +96,10 @@ public class TchController {
 
 public void sendFile(MultipartFile file, String inputPath,String name) throws Exception {
         //String username, String password, String host, int port, String path, byte[] data, String filename
-        String username = "root";
-        String password = "***REMOVED***";
-        String host = "edusmhrd.ddns.net";
-        int port =26;
+        String username = remoteUsername;
+        String password = remotePassword;
+        String host = remoteHost;
+        int port = remotePort;
         String path = "/usr/local/data/tech/"+inputPath;
         //byte[] data = (byte[]) param.get("data");
       

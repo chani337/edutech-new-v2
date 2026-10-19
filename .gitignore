@@ -1,3 +1,12 @@
 .env*
 *.log
 core
+!.env.example
+*.bak
+*.p12
+*.jks
+*.pem
+*.key
+application-secret.properties
+.DS_Store
+ProjectSMHRD/bin/
